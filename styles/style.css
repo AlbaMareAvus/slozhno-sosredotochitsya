@@ -1,7 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  --background-color: var(--theme-color);
   font-family: var(--font-family);
   background-color: var(--background-color);
   background-image: var(--background-image);
@@ -11,6 +8,7 @@
 }
 
 .header {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   align-items: center;
@@ -22,7 +20,7 @@
 .header__decor-text {
   position: absolute;
   align-self: self-start;
-  color: var(--accent-color);
+  color: var(--third-font-color);
   font-size: 18px;
   line-height: 1.39;
   inset-inline-end: 10px;
@@ -57,7 +55,7 @@
   border: none;
   padding-inline: 13px;
   padding-block: 0;
-  color: var(--accent-color);
+  color: var(--third-font-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 1;
@@ -72,7 +70,7 @@
 
 .header__title {
   margin-block-start: 2px;
-  color: var(--secondary-font-color);
+  color: var(--title-font-color);
   font-weight: 700;
   font-size: var(--mobile-font-size);
   line-height: 0.825;
@@ -85,8 +83,7 @@
 }
 
 .header__subtitle-text {
-  --font-color: var(--theme-color);
-  color: var(--font-color);
+  color: var(--secondary-font-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.3;
@@ -96,8 +93,8 @@
   content: '';
   position: absolute;
   bottom: 10px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--decorate-color);
+  border-block-end: 1px solid var(--decorate-color);
   block-size: 25px;
   inline-size: 25px;
 }
@@ -107,8 +104,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--decorate-color);
+  border-block-start: 1px solid var(--decorate-color);
   block-size: 25px;
   inline-size: 25px;
 }
@@ -133,7 +130,7 @@
 
 .content__text-block-title {
   margin-block-end: 20px;
-  color: var(--accent-color);
+  color: var(--third-font-color);
   font-weight: 700;
   font-size: inherit;
 }
@@ -143,9 +140,8 @@
 }
 
 .content__text-block-advice {
-  --font-color: var(--theme-color);
   margin-block-end: 20px;
-  color: var(--font-color);
+  color: var(--secondary-font-color);
   font-size: inherit;
 }
 
@@ -161,9 +157,8 @@
 
 .card__title,
 .content__images-block-title {
-  --font-color: var(--theme-color);
   margin-block-end: 10px;
-  color: var(--font-color);
+  color: var(--secondary-font-color);
   font-weight: 700;
   font-size: inherit;
   line-height: 1.294;
@@ -181,6 +176,7 @@
 .footer {
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   block-size: 100vh;
@@ -190,9 +186,192 @@
 .footer__title {
   padding-inline-start: 4px;
   padding-block-start: 4px;
-  color: var(--secondary-font-color);
+  color: var(--title-font-color);
   font-weight: 700;
   font-size: var(--mobile-font-size);
   line-height: 0.825;
   text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >= 576px) {
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    min-block-size: 1024px;
+  }
+
+  .header__decor-text {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .header__theme-menu {
+    grid-column: 1 / 3;
+    margin-block-start: 110px;
+  }
+
+  .header__title {
+    grid-column: 1 / 3;
+    font-size: var(--tablet-and-desktop-font-size);
+    transform: translateX(0);
+  }
+
+  .header__subtitle {
+    grid-column: 2 / 3;
+    margin-block-end: 115px;
+  }
+
+  .decorated-zone::after {
+   bottom: 20px;
+   left: 20px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .content {
+    padding: 60px 20px;
+  }
+
+  .content__text-block {
+    display: grid;
+    grid-template-columns: 236px auto;
+    column-gap: 20px;
+    margin-block-end: 60px;
+  }
+
+  .content__text-block-card {
+    grid-column: 2 / 3;
+  }
+
+  .content__text-block-advice {
+    grid-column: 2 / 3;
+  }
+
+  .negative-factors {
+    display: block;
+  }
+
+  .negative-factors > .content__text-block-title {
+    max-inline-size: 236px;
+  }
+
+  .content__text-block-title {
+    grid-row: 1 / 3;
+  }
+
+  .content__images-block-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 192px 230px 318px;
+    gap: 20px;
+  }
+
+  .content__images-block-title {
+    margin-block-end: 20px;
+  }
+
+  .sunset-image {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .ice-cream-image {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .tape-image {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .books-image {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .street-image {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .footer__title {
+    padding-inline-start: 0;
+    padding-block-start: 2px;
+    font-size: var(--tablet-and-desktop-font-size);
+  }
+}
+
+@media (width >= 992px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    justify-content: center;
+    align-self: self-start;
+    margin: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid currentColor;
+    cursor: pointer;
+  }
+
+  .header__theme-menu-button:focus {
+    outline: none;
+  }
+
+  .header__theme-menu-button:focus-visible {
+    border-block-end: 1px solid currentColor;
+  }
+
+  .header__title {
+    transform: translateX(-20px);
+  }
+
+  .header__subtitle {
+    margin-block-end: 58px;
+  }
+
+  .content__text-block {
+    grid-template-columns: 315px auto;
+  }
+
+  .negative-factors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .negative-factors > .content__text-block-title {
+    grid-row: 1 / 2;
+    max-inline-size: 315px;
+  }
+
+  .negative-factors > .card {
+    grid-column: auto;
+    grid-row-start: 2;
+  }
+
+  .content__images-block-gallery {
+    grid-template-rows: 260px 315px 433px;
+  }
+
+  .card__link:hover {
+    border-block-end: 1px solid currentColor;
+  }
+
+  .card__link:focus {
+    outline: none;
+  }
+
+  .card__link:focus-visible {
+    outline: 1px solid currentColor;
+  }
 }

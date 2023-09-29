@@ -213,7 +213,7 @@
   .header__title {
     grid-column: 1 / 3;
     font-size: var(--tablet-and-desktop-font-size);
-    transform: translateX(0);
+    transform: translateX(-20px);
   }
 
   .header__subtitle {
@@ -252,6 +252,7 @@
 
   .negative-factors {
     display: block;
+    margin-block-end: 80px;
   }
 
   .negative-factors > .content__text-block-title {
@@ -332,10 +333,6 @@
     border-block-end: 1px solid currentColor;
   }
 
-  .header__title {
-    transform: translateX(-20px);
-  }
-
   .header__subtitle {
     margin-block-end: 58px;
   }
@@ -347,6 +344,7 @@
   .negative-factors {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-block-end: 60px;
   }
 
   .negative-factors > .content__text-block-title {

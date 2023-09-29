@@ -33,6 +33,10 @@ picture {
   padding: 0;
 }
 
+img {
+  width: 100%;
+}
+
 button,
 a {
   color: currentColor;

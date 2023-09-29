@@ -43,7 +43,7 @@
   display: grid;
   justify-content: end;
   align-content: center;
-  margin-block-start: 22px;
+  margin-block-start: 9px;
 }
 
 .header__theme-menu-list {
@@ -71,7 +71,7 @@
 }
 
 .header__title {
-  margin-block-start: 27px;
+  margin-block-start: 2px;
   color: var(--secondary-font-color);
   font-weight: 700;
   font-size: var(--mobile-font-size);
@@ -81,7 +81,7 @@
 
 .header__subtitle {
   height: fit-content;
-  margin-block-start: 23px;
+  margin-block-end: 13px;
 }
 
 .header__subtitle-text {
@@ -94,6 +94,8 @@
 
 .decorated-zone::after {
   content: '';
+  position: absolute;
+  bottom: 10px;
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
   block-size: 25px;
@@ -103,8 +105,8 @@
 .decorated-zone::before {
   content: '';
   position: absolute;
-  justify-self: self-end;
-  align-self: self-start;
+  top: 10px;
+  right: 10px;
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
   block-size: 25px;
@@ -120,7 +122,7 @@
 }
 
 .content {
-  padding: 40px 10px;
+  padding: 40px 10px 33px;
 }
 
 .content__text-block {
@@ -147,12 +149,24 @@
   font-size: inherit;
 }
 
-.card__title {
+.content__images-block {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.content__images-block-gallery {
+  display: grid;
+  gap: 5px;
+}
+
+.card__title,
+.content__images-block-title {
   --font-color: var(--theme-color);
   margin-block-end: 10px;
   color: var(--font-color);
   font-weight: 700;
   font-size: inherit;
+  line-height: 1.294;
 }
 
 .card__description {
@@ -161,5 +175,24 @@
 
 .card__link {
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.footer__title {
+  padding-inline-start: 4px;
+  padding-block-start: 4px;
+  color: var(--secondary-font-color);
+  font-weight: 700;
+  font-size: var(--mobile-font-size);
+  line-height: 0.825;
   text-shadow: 2px 2px 0 var(--accent-color);
 }

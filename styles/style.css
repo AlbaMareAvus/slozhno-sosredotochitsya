@@ -62,6 +62,9 @@
   line-height: 1;
   text-transform: lowercase;
   background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .header__theme-menu-button_active {
@@ -323,7 +326,7 @@
   }
 
   .header__theme-menu-button:hover {
-    outline: 1px solid currentColor;
+    outline: 1px solid var(--hover-color);
     cursor: pointer;
   }
 
@@ -365,6 +368,7 @@
 
   .card__link:hover {
     border-block-end: 1px solid currentColor;
+    transition: all .3s ease;
   }
 
   .card__link:focus {

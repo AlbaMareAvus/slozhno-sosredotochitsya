@@ -24,17 +24,18 @@
   font-size: 18px;
   line-height: 1.39;
   inset-inline-end: 10px;
+  inset-block-start: 10px;
 }
 
 .header__decor-text::after {
   content: '';
   display: inline-block;
-  margin-inline: 9px;
+  margin-inline: 8px;
   border-radius: 50%;
   background-color: var(--accent-color);
   filter: drop-shadow(0 0 4px currentColor);
-  block-size: 12px;
-  inline-size: 12px;
+  block-size: 13px;
+  inline-size: 13px;
 }
 
 .header__theme-menu {
@@ -93,6 +94,7 @@
   content: '';
   position: absolute;
   bottom: 10px;
+  left: 10px;
   border-inline-start: 1px solid var(--decorate-color);
   border-block-end: 1px solid var(--decorate-color);
   block-size: 25px;
@@ -202,7 +204,7 @@
 
   .header__decor-text {
     inset-block-start: 20px;
-    inset-inline-end: 20px;
+    inset-inline-end: 19px;
   }
 
   .header__theme-menu {

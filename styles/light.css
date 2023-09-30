@@ -45,7 +45,7 @@
   }
 }
 
-@media (width >= 992px) and (prefers-color-scheme: light){
+@media (width >= 992px) and (prefers-color-scheme: light) {
   .page.theme_light .header__title,
   .page.theme_auto  .header__title {
     text-shadow: 4px 4px 0 var(--big-header-footer-shadow-color);
